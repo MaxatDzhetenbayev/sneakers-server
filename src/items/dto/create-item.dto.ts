@@ -1,3 +1,5 @@
 export class CreateItemDto {
-  itemId: number;
+  title: string;
+  imageurl: string;
+  price: number;
 }

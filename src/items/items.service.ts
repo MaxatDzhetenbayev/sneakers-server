@@ -12,7 +12,12 @@ export class ItemsService {
 	 ) {}
 
   create(createItemDto: CreateItemDto) {
-    return this.itemModel.create(createItemDto);
+    try {
+      return this.itemModel.create(createItemDto);
+    } catch (error) {
+      console.log(error)
+    }
+
   }
 
   findAll() {
@@ -23,8 +28,8 @@ export class ItemsService {
     return `This action returns a #${id} item`;
   }
 
-  update(id: number, updateItemDto: UpdateItemDto) {
-    return `This action updates a #${id} item`;
+  update(itemid: number, updateItemDto: UpdateItemDto) {
+    return this.itemModel.update(updateItemDto, {where: {id: itemid}})
   }
 
   remove(id: number) {

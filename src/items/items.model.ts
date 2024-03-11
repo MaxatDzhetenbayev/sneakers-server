@@ -2,8 +2,9 @@ import { Column, Model, Table } from 'sequelize-typescript';
 
 
 interface ItemAttributes{
+  id: number,
 	title: string
-	image: string
+	imageurl: string
 	price: number
 }
 
@@ -12,7 +13,7 @@ export class Item extends Model<ItemAttributes> {
   @Column
   title: string;
   @Column
-  image: string;
+  imageurl: string;
   @Column({ defaultValue: true })
   price: boolean;
 }

@@ -18,7 +18,6 @@ import { join } from 'path';
       host: 'localhost',
       port: 5432,
       username: 'postgres',
-      password: 'admin',
       database: 'sneakers',
       models: [Item],
     }),
@@ -29,4 +28,4 @@ import { join } from 'path';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
